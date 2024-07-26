@@ -44,6 +44,13 @@
     border: none;
 }
 .explore-menu-list-item .active{
-    border: 4px solid tomato;
-    padding: 2px;
+    border: 4px solid #12a460!important;
+    padding: 2px !important;
+}
+@media (max-width:1050px) {
+    .explore-menu-text{
+        max-width:  100%;
+        font-size: 14px;
+    }
+
 }
