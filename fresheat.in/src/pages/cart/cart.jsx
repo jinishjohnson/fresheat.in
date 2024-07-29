@@ -4,7 +4,7 @@ import { StoreContext } from "../../context/StoreContext";
 import { useNavigate } from "react-router-dom";
 
 const cart = () => {
-  const { cartItems, foodList, removeFromCart , getTotalCartAmount ,url} = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart , getTotalCartAmount,url} = useContext(StoreContext);
   const navigate = useNavigate();
   return (
     <div className="container">
@@ -20,14 +20,15 @@ const cart = () => {
           </div>
           <br />
           <hr />
-          {foodList.map((item, index) => {
+          {food_list.map((item, index) => {
             if (cartItems[item._id] > 0){
               return (
                 <div>
                   <div className="cart-items-title cart-items-item">
-                  <img src={`${url}/images/${item.image}`} alt={item.name} onError={(e) => { e.target.src = '/images/placeholder.png'; }} />                    <p>{item.name}</p>
+                    <img src={url+"/images/"+item.image} alt="" />
+                    <p>{item.name}</p>
                     <p>₹{item.price}</p>
-                    <p>{cartItems[item.id]}</p>
+                    <p>{cartItems[item._id]}</p>
                     <p>₹{item.price * cartItems[item._id]}</p>
                     <p
                       onClick={() => removeFromCart(item._id)}
@@ -60,7 +61,7 @@ const cart = () => {
               <hr />
               <div className="cart-total-details">
               <b>Total</b>
-              <b>₹{getTotalCartAmount()===0?0:getTotalCartAmount()+2}</b>
+              <b>₹{getTotalCartAmount()===0?0:getTotalCartAmount()+50}</b>
               </div>
               <hr />
             </div>
