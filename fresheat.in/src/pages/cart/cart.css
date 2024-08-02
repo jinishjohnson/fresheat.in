@@ -1,5 +1,6 @@
 .cart{
     margin-top: 100px;
+    position: relative;
 }
 .cart-items-title{
     display: grid;
@@ -95,3 +96,13 @@
     }
     
  }
+ /* .cart .cross{
+    background-color: red;
+    border-radius: 50px;
+    width: 25px;
+    border-color:transparent;
+    color: white;
+    position: absolute;
+    right: 5%;
+    top: 58%;
+ } */

@@ -1,3 +1,4 @@
+import userNodel from "../models/userModel.js"
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
 import validator from "validator"
@@ -60,7 +61,7 @@ const registerUser = async(req,res) =>{
         })
 
         const user = await newUser.save()
-        const token = createToken(user._id)
+        const token = createToken(user.id)
         res.json({success:true,token});
 
     }
